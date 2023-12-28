@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  tfmodules:
+    image: 112784725199.dkr.ecr.us-east-1.amazonaws.com/devops/tfmodules:1.0.1
+    volumes:
+      - .:/modules
+      - ~/.gitconfig:/root/.gitconfig
+      - ~/.aws:/root/.aws
+    working_dir: /modules
+    entrypoint:
+      - bash
