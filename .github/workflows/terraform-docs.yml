@@ -4,19 +4,20 @@ on:
     branches:
       - main
       - develop
-      - 'release/**'  
   workflow_dispatch:
+
+permissions: write-all
 
 jobs:
   terraform-docs:
-    runs-on: [ self-hosted ]
+    runs-on: [ ubuntu-latest ]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
         ref: ${{ github.event.pull_request.head.ref }}
 
     - name: Render terraform docs inside the documentation.md and push changes back to PR branch
-      uses: actions/terraform-docs@main
+      uses: terraform-docs/gh-actions@v1
       with:
         working-dir: .
         output-file: documentation.md
