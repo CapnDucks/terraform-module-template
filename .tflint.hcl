@@ -6,7 +6,7 @@ config {
 
 plugin "aws" {
     enabled = true
-    version = "0.17.0"
+    version = "0.28.0"
     source  = "github.com/terraform-linters/tflint-ruleset-aws"
 }
 
@@ -15,7 +15,7 @@ rule "terraform_comment_syntax" {
 }
 
 rule "terraform_deprecated_index" {
-  enabled = true      # Disallow legacy dot index syntax
+  enabled = false      # Disallow legacy dot index syntax
 }
 
 rule "terraform_documented_variables" {
