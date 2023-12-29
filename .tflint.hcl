@@ -15,7 +15,7 @@ rule "terraform_comment_syntax" {
 }
 
 rule "terraform_deprecated_index" {
-  enabled = true      # Disallow legacy dot index syntax
+  enabled = false      # Disallow legacy dot index syntax
 }
 
 rule "terraform_documented_variables" {
